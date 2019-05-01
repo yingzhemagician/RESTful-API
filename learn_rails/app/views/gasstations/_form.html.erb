@@ -1,0 +1,37 @@
+<%= form_with(model: gasstation, local: true) do |form| %>
+  <% if gasstation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gasstation.errors.count, "error") %> prohibited this gasstation from being saved:</h2>
+
+      <ul>
+      <% gasstation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :prices %>
+    <%= form.text_field :prices %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitudes %>
+    <%= form.text_field :latitudes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitudes %>
+    <%= form.text_field :longitudes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

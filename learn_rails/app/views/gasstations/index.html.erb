@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gasstations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Prices</th>
+      <th>Latitudes</th>
+      <th>Longitudes</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gasstations.each do |gasstation| %>
+      <tr>
+        <td><%= gasstation.prices %></td>
+        <td><%= gasstation.latitudes %></td>
+        <td><%= gasstation.longitudes %></td>
+        <td><%= gasstation.user_id %></td>
+        <td><%= link_to 'Show', gasstation %></td>
+        <td><%= link_to 'Edit', edit_gasstation_path(gasstation) %></td>
+        <td><%= link_to 'Destroy', gasstation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gasstation', new_gasstation_path %>
